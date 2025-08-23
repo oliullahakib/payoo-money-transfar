@@ -1,5 +1,11 @@
 let bankAccountNumber = 12345678901;
 let accountPin=1234;
+// logout section 
+document.getElementById('logout-btn').addEventListener("click", function (e) {
+    e.preventDefault()
+    window.location.href = "./index.html"
+})
+// add Money section 
 document.getElementById('add-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
     let addAmount = parseInt(document.getElementById('add-amount').value);
@@ -29,6 +35,5 @@ document.getElementById('add-money-btn').addEventListener("click", function (e) 
     document.getElementById("account-number").value = ''
     document.getElementById('add-amount').value = ''
     alert(`${addAmount}tk is added successfuly`);
-
-    
+  
 })
