@@ -8,13 +8,13 @@ document.getElementById('logout-btn').addEventListener("click", function (e) {
 // add Money section 
 document.getElementById('add-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
-    let addAmount = parseInt(document.getElementById('add-amount').value);
+    let withdrawAmount = parseInt(document.getElementById('add-amount').value);
     let availableBlance = parseInt(document.getElementById("available-blance").innerText);
-    totalAmaount = addAmount + availableBlance;
+    totalAmaount = withdrawAmount + availableBlance;
 
-    let userAccountNumber = parseInt(document.getElementById("account-number").value);
+    let agentNumber = parseInt(document.getElementById("account-number").value);
     let userPin = parseInt(document.getElementById("add-money-pin").value);
-    if(userAccountNumber !== bankAccountNumber){
+    if(agentNumber !== bankAccountNumber){
         alert("Invalid Account Number");
         return
     }
@@ -34,6 +34,36 @@ document.getElementById('add-money-btn').addEventListener("click", function (e) 
     document.getElementById("add-money-pin").value = ''
     document.getElementById("account-number").value = ''
     document.getElementById('add-amount').value = ''
-    alert(`${addAmount}tk is added successfuly`);
+    alert(`${withdrawAmount}tk is added successfuly`);
+  
+})
+// cashout section 
+document.getElementById('withdraw-money-btn').addEventListener("click", function (e) {
+    e.preventDefault()
+    let withdrawAmount = parseInt(document.getElementById('withdraw-amount').value);
+    let availableBlance = parseInt(document.getElementById("available-blance").innerText);
+    if(availableBlance <= 0 || withdrawAmount > availableBlance){
+        alert("Yout Dont Have Enogh Money to Withdraw")
+        return
+    }
+    totalAmaount = availableBlance - withdrawAmount ;
+
+    let agentNumber = parseInt(document.getElementById("agent-number").value);
+    let userPin = parseInt(document.getElementById("withdraw-money-pin").value);
+    if(agentNumber !== bankAccountNumber){
+        alert("Invalid Account Number");
+        return
+    }
+    if(userPin !==accountPin){
+        alert('Invalid Pin');
+        return
+    }
+    document.getElementById("available-blance").innerText = totalAmaount;
+
+    // reset all value
+    document.getElementById("withdraw-money-pin").value = ''
+    document.getElementById("agent-number").value = ''
+    document.getElementById('withdraw-amount').value = ''
+    alert(`${withdrawAmount}tk Cashout successfuly`);
   
 })
