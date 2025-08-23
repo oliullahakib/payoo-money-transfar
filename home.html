@@ -40,12 +40,14 @@
             <div class="card-container grid grid-cols-3 gap-3 mt-6">
                 <!-- card1 -->
                 <div
+                id="add-money-card"
                     class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
                     <img src="./assets/wallet1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm">Add Money</p>
                 </div>
                 <!-- card2 -->
                 <div
+                id="cash-out-card"
                     class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
                     <img src="./assets/send1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm">Cashout</p>
@@ -79,7 +81,7 @@
 
     </header>
     <main >
-        <section class="add-money mt-6 hidden">
+        <section  id="add-money-section" class="add-money-section mt-6 hidden">
             <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Add Money</h2>
             <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
                 <h3>Secect Bank</h3>
@@ -114,7 +116,7 @@
             </form>
         </section>
         <!-- cash out section -->
-        <section class="add-money mt-6 ">
+        <section id="cash-out-section" class="cash-out-section mt-6 ">
             <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Cash Out</h2>
             <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
                 <div class="w-full">

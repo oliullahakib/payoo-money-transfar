@@ -6,6 +6,12 @@ document.getElementById('logout-btn').addEventListener("click", function (e) {
     window.location.href = "./index.html"
 })
 // add Money section 
+// add money card 
+document.getElementById("add-money-card").addEventListener("click",function () {
+    document.getElementById('cash-out-section').style.display = "none";
+    document.getElementById('add-money-section').style.display = "block";
+})
+// add money button
 document.getElementById('add-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
     let withdrawAmount = parseInt(document.getElementById('add-amount').value);
@@ -38,6 +44,11 @@ document.getElementById('add-money-btn').addEventListener("click", function (e) 
   
 })
 // cashout section 
+document.getElementById("cash-out-card").addEventListener("click",function () {
+    document.getElementById('cash-out-section').style.display = "block";
+    document.getElementById('add-money-section').style.display = "none";
+    
+})
 document.getElementById('withdraw-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
     let withdrawAmount = parseInt(document.getElementById('withdraw-amount').value);
