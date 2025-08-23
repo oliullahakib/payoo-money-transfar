@@ -23,53 +23,97 @@
             <div class="nav-left pl-6 flex items-center">
                 <img class="max-h-[50px]" src="./assets/Group.png" alt="logo">
                 <div>
-                    <h1 class="font-bold">$<span>45000</span></h1>
+                    <h1 class="font-bold">$<span id="available-blance">45000</span></h1>
                     <p class="text-gray-500">Available Balance</p>
                 </div>
             </div>
             <div class="nav-right pr-6">
-                <button class="btn text-gray-500"> <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i> Log Out</button>
+                <button class="btn text-gray-500"> <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i> Log
+                    Out</button>
             </div>
         </nav>
 
         <section class="funtionality max-w-96 mx-auto bg-white mt-6 px-6">
             <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
-            <p class="text-gray-500 pt-3">Enjoy easy and convenient financial services with us. Cashout charge is low and</p>
+            <p class="text-gray-500 pt-3">Enjoy easy and convenient financial services with us. Cashout charge is low
+                and</p>
             <div class="card-container grid grid-cols-3 gap-3 mt-6">
                 <!-- card1 -->
-                <div class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                <div
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
                     <img src="./assets/wallet1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm">Add Money</p>
                 </div>
                 <!-- card2 -->
-                <div class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                <div
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
                     <img src="./assets/send1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm">Cashout</p>
                 </div>
                 <!-- card3 -->
-                <div class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5  cursor-pointer">
+                <div
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5  cursor-pointer">
                     <img src="./assets/money1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm ">Transfer Money</p>
                 </div>
                 <!-- card4 -->
-                <div class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                <div
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
                     <img src="./assets/bonus1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm">Get Bonus</p>
                 </div>
                 <!-- card5 -->
-                <div class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                <div
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
                     <img src="./assets/purse1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm">Pay Bill</p>
                 </div>
                 <!-- card6 -->
-                <div class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                <div
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
                     <img src="./assets/transaction1.png" alt="wallet image">
                     <p class="text-gray-500 text-sm">Transactions</p>
                 </div>
             </div>
         </section>
-    </header>
 
+    </header>
+    <main class="max-w-96 mx-auto bg-white mt-6 rounded-xl">
+        <section class="add-money  ">
+            <form class="min-w-96 mx-auto bg-white p-8 space-y-3 rounded-lg">
+                <h3>Secect Bank</h3>
+                <select id="bank" class="select rounded-[32px] text-gray-500 font-light">
+                    <option disabled selected>Seclect Bank</option>
+                    <option>Ab Bank</option>
+                    <option>Islamic Bank</option>
+                    <option>DB Bank</option>
+                </select>
+
+                <div class="w-full">
+                    <label class="pb-3 font-medium">Bank Account Number</label>
+                    <br>
+                    <input id="account-number" type="text " class="input mt-2 rounded-[32px] py-4 pl-5 text-gray-500"
+                        placeholder="Enter 11 digit account number" />
+                </div>
+                <div>
+                    <label class="font-medium">Amount to Add</label>
+                    <br>
+                    <input id="add-amount" type="text "
+                        class="input mt-2 rounded-[32px] py-4 pl-5 w-full text-gray-500"
+                        placeholder="Add Amount to withdraw" />
+                </div>
+                <div>
+                    <label class="font-medium">Pin Number</label>
+                    <br>
+                    <input id="add-money-pin" type="password "
+                        class="input mt-2 rounded-[32px] py-4 pl-5 w-full text-gray-500"
+                        placeholder="Enter 4 Digit Pin Number" />
+                </div>
+                <button id="add-money-btn" class="btn bg-[#0874F2] text-white w-full rounded-[32px]">Add Money</button>
+            </form>
+        </section>
+    </main>
+    <script src="./js/home.js"></script>
 </body>
 
 </html>
