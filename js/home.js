@@ -1,6 +1,6 @@
 // reuseable function
 function getInputValueAsNumber(id) {
-   return parseInt(document.getElementById(id).value);
+    return parseInt(document.getElementById(id).value);
 }
 function getElementValueAsNumber(id) {
     return parseInt(document.getElementById(id).innerText);
@@ -8,8 +8,13 @@ function getElementValueAsNumber(id) {
 function setBalance(amount) {
     return document.getElementById("available-blance").innerText = amount;
 }
+
+function resetInput(id) {
+    return document.getElementById(id).value = ''
+}
+
 let bankAccountNumber = 12345678901;
-let accountPin=1234;
+let accountPin = 1234;
 // logout section 
 document.getElementById('logout-btn').addEventListener("click", function (e) {
     e.preventDefault()
@@ -18,7 +23,7 @@ document.getElementById('logout-btn').addEventListener("click", function (e) {
 // add Money section 
 
 // add money card 
-document.getElementById("add-money-card").addEventListener("click",function () {
+document.getElementById("add-money-card").addEventListener("click", function () {
     document.getElementById('cash-out-section').style.display = "none";
     document.getElementById('add-money-section').style.display = "block";
 })
@@ -26,7 +31,7 @@ document.getElementById("add-money-card").addEventListener("click",function () {
 document.getElementById('add-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
     let addAmount = getInputValueAsNumber('add-amount');
-    if(addAmount<=0){
+    if (addAmount <= 0) {
         alert("Invalid Amount ")
         return
     }
@@ -35,56 +40,57 @@ document.getElementById('add-money-btn').addEventListener("click", function (e) 
 
     let agentNumber = getInputValueAsNumber("account-number");
     let userPin = getInputValueAsNumber("add-money-pin");
-    if(agentNumber !== bankAccountNumber){
+    if (agentNumber !== bankAccountNumber) {
         alert("Invalid Account Number");
         return
     }
-    if(userPin !==accountPin){
+    if (userPin !== accountPin) {
         alert('Invalid Pin');
         return
     }
     let bank = document.getElementById('bank').value;
-   
-   if(bank === 'Seclect Bank'){
-    alert("Seclect a Bank To Add Money");
-    return
-   };
+    console.log(bank);
+
+    if (bank === 'Seclect Bank') {
+        alert("Seclect a Bank To Add Money");
+        return
+    };
     setBalance(totalAmaount);
     // reset all value
     document.getElementById("add-money-pin").value = ''
     document.getElementById("account-number").value = ''
     document.getElementById('add-amount').value = ''
     alert(`${addAmount}tk is added successfuly`);
-  
+
 })
 
 // cashout section 
-document.getElementById("cash-out-card").addEventListener("click",function () {
+document.getElementById("cash-out-card").addEventListener("click", function () {
     document.getElementById('cash-out-section').style.display = "block";
     document.getElementById('add-money-section').style.display = "none";
-    
+
 })
 document.getElementById('withdraw-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
     let withdrawAmount = getInputValueAsNumber('withdraw-amount');
-    if(withdrawAmount <=0){
+    if (withdrawAmount <= 0) {
         alert('Invalid Amount')
         return
     }
     let availableBlance = getElementValueAsNumber("available-blance");
-    if(availableBlance <= 0 || withdrawAmount > availableBlance){
+    if (availableBlance <= 0 || withdrawAmount > availableBlance) {
         alert("Yout Dont Have Enogh Money to Withdraw")
         return
     }
-    totalAmaount = availableBlance - withdrawAmount ;
+    totalAmaount = availableBlance - withdrawAmount;
 
     let agentNumber = getInputValueAsNumber("agent-number");
     let userPin = getInputValueAsNumber("withdraw-money-pin");
-    if(agentNumber !== bankAccountNumber){
+    if (agentNumber !== bankAccountNumber) {
         alert("Invalid Account Number");
         return
     }
-    if(userPin !==accountPin){
+    if (userPin !== accountPin) {
         alert('Invalid Pin');
         return
     }
@@ -95,35 +101,35 @@ document.getElementById('withdraw-money-btn').addEventListener("click", function
     document.getElementById("agent-number").value = ''
     document.getElementById('withdraw-amount').value = ''
     alert(`${withdrawAmount}tk Cashout successfuly`);
-  
+
 })
-// transfer section 
+// transfer money section 
 // document.getElementById("cash-out-card").addEventListener("click",function () {
 //     document.getElementById('cash-out-section').style.display = "block";
 //     document.getElementById('add-money-section').style.display = "none";
-    
+
 // })
 document.getElementById('transfer-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
     let transferAmount = getInputValueAsNumber('transfer-amount');
-    if(transferAmount <=0){
+    if (transferAmount <= 0) {
         alert('Invalid Amount')
         return
     }
     let availableBlance = getElementValueAsNumber("available-blance");
-    if(availableBlance <= 0 || transferAmount > availableBlance){
+    if (availableBlance <= 0 || transferAmount > availableBlance) {
         alert("Yout Dont Have Enogh Money to Transfer")
         return
     }
-    totalAmaount = availableBlance - transferAmount ;
+    totalAmaount = availableBlance - transferAmount;
 
     let userAccontNumber = getInputValueAsNumber("user-account-number");
     let userPin = getInputValueAsNumber("transfer-money-pin");
-    if(userAccontNumber !== bankAccountNumber){
+    if (userAccontNumber !== bankAccountNumber) {
         alert("Invalid Account Number");
         return
     }
-    if(userPin !== accountPin){
+    if (userPin !== accountPin) {
         alert('Invalid Pin');
         return
     }
@@ -134,6 +140,48 @@ document.getElementById('transfer-money-btn').addEventListener("click", function
     document.getElementById("user-account-number").value = ''
     document.getElementById('transfer-amount').value = ''
     alert(`${transferAmount}tk Transfer successfuly`);
-  
+
+})
+
+// pay bill section 
+
+// pay bill card 
+// document.getElementById("add-money-card").addEventListener("click",function () {
+//     document.getElementById('cash-out-section').style.display = "none";
+//     document.getElementById('add-money-section').style.display = "block";
+// })
+// pay bill button
+document.getElementById('pay-bill-btn').addEventListener("click", function (e) {
+    e.preventDefault()
+    let payAmount = getInputValueAsNumber('pay-amount');
+    if (payAmount <= 0) {
+        alert("Invalid Amount ")
+        return
+    }
+    let availableBlance = getElementValueAsNumber("available-blance");
+    totalAmaount =  availableBlance - payAmount ;
+
+    let billAccountNumber = getInputValueAsNumber("bill-account-number");
+    let userPin = getInputValueAsNumber("pay-bill-pin");
+    if (billAccountNumber !== bankAccountNumber) {
+        alert("Invalid Account Number");
+        return
+    }
+    if (userPin !== accountPin) {
+        alert('Invalid Pin');
+        return
+    }
+   let bank = document.getElementById("pay-bank").value;
+    if (bank === 'Seclect Bank') {
+        alert("Seclect a Bank To Add Money");
+        return
+    };
+    setBalance(totalAmaount);
+    // reset all value
+    resetInput("pay-bill-pin")
+    resetInput("bill-account-number")
+    resetInput('pay-amount')
+    alert(`${payAmount}tk is pay successfuly`);
+
 })
 

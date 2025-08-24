@@ -101,7 +101,7 @@
                     <label class="font-medium">Amount to Add</label>
                     <br>
                     <input id="add-amount" type="text " class="input mt-2 rounded-[32px] py-4 pl-5 w-full text-gray-500"
-                        placeholder="Add Amount to withdraw" />
+                        placeholder="Amount To Add " />
                 </div>
                 <div>
                     <label class="font-medium">Pin Number</label>
@@ -141,7 +141,7 @@
                     Money</button>
             </form>
         </section>
-        <section id="cash-out-section" class="cash-out-section mt-6 ">
+        <section id="transfer-money-section" class="cash-out-section mt-6 hidden">
             <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Transfer Money</h2>
             <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
                 <div class="w-full">
@@ -166,6 +166,39 @@
                 </div>
                 <button id="transfer-money-btn" class="btn bg-[#0874F2] text-white w-full rounded-[32px]">Send
                     Now</button>
+            </form>
+        </section>
+        <section id="pay-bill-section" class="add-money-section mt-6 ">
+            <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Pay Bill</h2>
+            <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
+                <h3>Secect To Pay</h3>
+                <select id="pay-bank" class="select rounded-[32px] text-gray-500 font-light">
+                    <option disabled selected>Seclect Bank</option>
+                    <option>Ab Bank</option>
+                    <option>Islamic Bank</option>
+                    <option>DB Bank</option>
+                </select>
+
+                <div class="w-full">
+                    <label class="pb-3 font-medium">Bill Account Number</label>
+                    <br>
+                    <input id="bill-account-number" type="text " class="input mt-2 rounded-[32px] py-4 pl-5 text-gray-500"
+                        placeholder="Enter 11 digit account number" />
+                </div>
+                <div>
+                    <label class="font-medium">Amount to Pay</label>
+                    <br>
+                    <input id="pay-amount" type="text " class="input mt-2 rounded-[32px] py-4 pl-5 w-full text-gray-500"
+                        placeholder="Add Amount to pay" />
+                </div>
+                <div>
+                    <label class="font-medium">Pin Number</label>
+                    <br>
+                    <input id="pay-bill-pin" type="password "
+                        class="input mt-2 rounded-[32px] py-4 pl-5 w-full text-gray-500"
+                        placeholder="Enter 4 Digit Pin Number" />
+                </div>
+                <button id="pay-bill-btn" class="btn bg-[#0874F2] text-white w-full rounded-[32px]">Pay Now</button>
             </form>
         </section>
     </main>
