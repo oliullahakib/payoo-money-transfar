@@ -97,3 +97,43 @@ document.getElementById('withdraw-money-btn').addEventListener("click", function
     alert(`${withdrawAmount}tk Cashout successfuly`);
   
 })
+// transfer section 
+// document.getElementById("cash-out-card").addEventListener("click",function () {
+//     document.getElementById('cash-out-section').style.display = "block";
+//     document.getElementById('add-money-section').style.display = "none";
+    
+// })
+document.getElementById('transfer-money-btn').addEventListener("click", function (e) {
+    e.preventDefault()
+    let transferAmount = getInputValueAsNumber('transfer-amount');
+    if(transferAmount <=0){
+        alert('Invalid Amount')
+        return
+    }
+    let availableBlance = getElementValueAsNumber("available-blance");
+    if(availableBlance <= 0 || transferAmount > availableBlance){
+        alert("Yout Dont Have Enogh Money to Transfer")
+        return
+    }
+    totalAmaount = availableBlance - transferAmount ;
+
+    let userAccontNumber = getInputValueAsNumber("user-account-number");
+    let userPin = getInputValueAsNumber("transfer-money-pin");
+    if(userAccontNumber !== bankAccountNumber){
+        alert("Invalid Account Number");
+        return
+    }
+    if(userPin !== accountPin){
+        alert('Invalid Pin');
+        return
+    }
+    setBalance(totalAmaount);
+
+    // reset all value
+    document.getElementById("transfer-money-pin").value = ''
+    document.getElementById("user-account-number").value = ''
+    document.getElementById('transfer-amount').value = ''
+    alert(`${transferAmount}tk Transfer successfuly`);
+  
+})
+
