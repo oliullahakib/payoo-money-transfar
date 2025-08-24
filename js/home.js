@@ -1,3 +1,13 @@
+// reuseable function
+function getInputValueAsNumber(id) {
+   return parseInt(document.getElementById(id).value);
+}
+function getElementValueAsNumber(id) {
+    return parseInt(document.getElementById(id).innerText);
+}
+function setBalance(amount) {
+    return document.getElementById("available-blance").innerText = amount;
+}
 let bankAccountNumber = 12345678901;
 let accountPin=1234;
 // logout section 
@@ -6,6 +16,7 @@ document.getElementById('logout-btn').addEventListener("click", function (e) {
     window.location.href = "./index.html"
 })
 // add Money section 
+
 // add money card 
 document.getElementById("add-money-card").addEventListener("click",function () {
     document.getElementById('cash-out-section').style.display = "none";
@@ -14,16 +25,16 @@ document.getElementById("add-money-card").addEventListener("click",function () {
 // add money button
 document.getElementById('add-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
-    let addAmount = parseInt(document.getElementById('add-amount').value);
+    let addAmount = getInputValueAsNumber('add-amount');
     if(addAmount<=0){
         alert("Invalid Amount ")
         return
     }
-    let availableBlance = parseInt(document.getElementById("available-blance").innerText);
+    let availableBlance = getElementValueAsNumber("available-blance");
     totalAmaount = addAmount + availableBlance;
 
-    let agentNumber = parseInt(document.getElementById("account-number").value);
-    let userPin = parseInt(document.getElementById("add-money-pin").value);
+    let agentNumber = getInputValueAsNumber("account-number");
+    let userPin = getInputValueAsNumber("add-money-pin");
     if(agentNumber !== bankAccountNumber){
         alert("Invalid Account Number");
         return
@@ -38,8 +49,7 @@ document.getElementById('add-money-btn').addEventListener("click", function (e) 
     alert("Seclect a Bank To Add Money");
     return
    };
-    document.getElementById("available-blance").innerText = totalAmaount;
-
+    setBalance(totalAmaount);
     // reset all value
     document.getElementById("add-money-pin").value = ''
     document.getElementById("account-number").value = ''
@@ -56,20 +66,20 @@ document.getElementById("cash-out-card").addEventListener("click",function () {
 })
 document.getElementById('withdraw-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
-    let withdrawAmount = parseInt(document.getElementById('withdraw-amount').value);
+    let withdrawAmount = getInputValueAsNumber('withdraw-amount');
     if(withdrawAmount <=0){
         alert('Invalid Amount')
         return
     }
-    let availableBlance = parseInt(document.getElementById("available-blance").innerText);
+    let availableBlance = getElementValueAsNumber("available-blance");
     if(availableBlance <= 0 || withdrawAmount > availableBlance){
         alert("Yout Dont Have Enogh Money to Withdraw")
         return
     }
     totalAmaount = availableBlance - withdrawAmount ;
 
-    let agentNumber = parseInt(document.getElementById("agent-number").value);
-    let userPin = parseInt(document.getElementById("withdraw-money-pin").value);
+    let agentNumber = getInputValueAsNumber("agent-number");
+    let userPin = getInputValueAsNumber("withdraw-money-pin");
     if(agentNumber !== bankAccountNumber){
         alert("Invalid Account Number");
         return
@@ -78,7 +88,7 @@ document.getElementById('withdraw-money-btn').addEventListener("click", function
         alert('Invalid Pin');
         return
     }
-    document.getElementById("available-blance").innerText = totalAmaount;
+    setBalance(totalAmaount);
 
     // reset all value
     document.getElementById("withdraw-money-pin").value = ''
