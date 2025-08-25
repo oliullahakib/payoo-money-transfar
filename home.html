@@ -41,43 +41,43 @@
             <div class="card-container grid grid-cols-3 gap-3 mt-6">
                 <!-- card1 -->
                 <div id="add-money-card"
-                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5  cursor-pointer text-gray-500">
                     <img src="./assets/wallet1.png" alt="wallet image">
-                    <p class="text-gray-500 text-sm">Add Money</p>
+                    <p class=" text-sm card-title">Add Money</p>
                 </div>
                 <!-- card2 -->
                 <div id="cash-out-card"
-                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer text-gray-500">
                     <img src="./assets/send1.png" alt="wallet image">
-                    <p class="text-gray-500 text-sm">Cashout</p>
+                    <p class=" text-sm card-title">Cashout</p>
                 </div>
                 <!-- card3 -->
                 <div
                 id="transfer-money-card"
-                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5  cursor-pointer">
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5  cursor-pointer text-gray-500">
                     <img src="./assets/money1.png" alt="wallet image">
-                    <p class="text-gray-500 text-sm ">Transfer Money</p>
+                    <p class=" text-sm  card-title">Transfer Money</p>
                 </div>
                 <!-- card4 -->
                 <div
                 id="get-bonus-card"
-                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer text-gray-500">
                     <img src="./assets/bonus1.png" alt="wallet image">
-                    <p class="text-gray-500 text-sm">Get Bonus</p>
+                    <p class=" text-sm card-title">Get Bonus</p>
                 </div>
                 <!-- card5 -->
                 <div
                 id="pay-bill-card"
-                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer text-gray-500">
                     <img src="./assets/purse1.png" alt="wallet image">
-                    <p class="text-gray-500 text-sm">Pay Bill</p>
+                    <p class=" text-sm card-title">Pay Bill</p>
                 </div>
                 <!-- card6 -->
                 <div
                 id="transaction-card"
-                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer">
+                    class="card flex items-center justify-center border-1 border-gray-200 rounded-xl py-5 cursor-pointer text-gray-500">
                     <img src="./assets/transaction1.png" alt="wallet image">
-                    <p class="text-gray-500 text-sm">Transactions</p>
+                    <p class=" text-sm card-title">Transactions</p>
                 </div>
             </div>
         </section>
@@ -118,7 +118,7 @@
             </form>
         </section>
         <!-- cash out section -->
-        <section id="cash-out-section" class="section cash-out-section mt-6 ">
+        <section id="cash-out-section" class="section cash-out-section mt-6 hidden">
             <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Cash Out</h2>
             <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
                 <div class="w-full">
@@ -145,7 +145,7 @@
                     Money</button>
             </form>
         </section>
-        <section id="transfer-money-section" class="section cash-out-section mt-6 ">
+        <section id="transfer-money-section" class="section cash-out-section mt-6 hidden">
             <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Transfer Money</h2>
             <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
                 <div class="w-full">
@@ -172,7 +172,7 @@
                     Now</button>
             </form>
         </section>
-        <section id="pay-bill-section" class="section add-money-section mt-6 ">
+        <section id="pay-bill-section" class="section add-money-section mt-6 hidden">
             <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Pay Bill</h2>
             <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
                 <h3>Secect To Pay</h3>
@@ -206,7 +206,7 @@
                 <button id="pay-bill-btn" class="btn bg-[#0874F2] text-white w-full rounded-[32px]">Pay Now</button>
             </form>
         </section>
-        <section id="get-bonus-section" class="section add-money-section mt-6 ">
+        <section id="get-bonus-section" class="section add-money-section mt-6 hidden">
             <h2 class="max-w-96 mx-auto pb-4 text-xl font-semibold">Get Bonus</h2>
             <form class="max-w-96 mx-auto bg-white p-8 space-y-3 rounded-xl">
                 <div class="w-full">
@@ -218,22 +218,13 @@
                 <button id="get-bonus-btn" class="btn bg-[#0874F2] text-white w-full rounded-[32px]">Get Bonus</button>
             </form>
         </section>
-        <section id="transaction-section" class="section transaction-section">
+        <section id="transaction-section" class="section transaction-section hidden">
             <div class="max-w-96 mx-auto flex justify-between items-center py-4">
-                <h2 class="text-xl font-semibold">Get Bonus</h2>
+                <h2 class="text-xl font-semibold">Transactions History</h2>
                 <p class="text-gray-500">View All</p>
             </div>
             <div id="history-card-container" class="history-card-container max-w-96 mx-auto">
-                <div class="card flex flex-row items-center justify-between bg-white p-2">
-                    <div class="flex gap-3 items-center">
-                       <div class=" rounded-full p-2 bg-[#F4F5F7]"> <img src="./assets/purse1.png" alt=""></div>
-                        <div>
-                            <h4 class="font-semibold text-[#080808b3]">Electicity bill</h4>
-                            <p class="text-gray-500">Today 1:44Am</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
+             
             </div>
         </section>
     </main>
