@@ -16,6 +16,13 @@ function resetInput(id) {
     return document.getElementById(id).value = ''
 }
 
+  function viweSection(id) {
+      let sections = document.getElementsByClassName('section');
+    for(const section of sections){
+        section.style.display = "none"    
+    }
+    document.getElementById(id).style.display = "block";
+ }
 let bankAccountNumber = 12345678901;
 let accountPin = 1234;
 // logout section 
@@ -25,11 +32,6 @@ document.getElementById('logout-btn').addEventListener("click", function (e) {
 })
 // add Money section 
 
-// add money card 
-document.getElementById("add-money-card").addEventListener("click", function () {
-    document.getElementById('cash-out-section').style.display = "none";
-    document.getElementById('add-money-section').style.display = "block";
-})
 // add money button
 document.getElementById('add-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
@@ -68,11 +70,7 @@ document.getElementById('add-money-btn').addEventListener("click", function (e) 
 })
 
 // cashout section 
-document.getElementById("cash-out-card").addEventListener("click", function () {
-    document.getElementById('cash-out-section').style.display = "block";
-    document.getElementById('add-money-section').style.display = "none";
 
-})
 document.getElementById('withdraw-money-btn').addEventListener("click", function (e) {
     e.preventDefault()
     let withdrawAmount = getInputValueAsNumber('withdraw-amount');
@@ -148,11 +146,7 @@ document.getElementById('transfer-money-btn').addEventListener("click", function
 
 // pay bill section 
 
-// pay bill card 
-// document.getElementById("add-money-card").addEventListener("click",function () {
-//     document.getElementById('cash-out-section').style.display = "none";
-//     document.getElementById('add-money-section').style.display = "block";
-// })
+
 // pay bill button
 document.getElementById('pay-bill-btn').addEventListener("click", function (e) {
     e.preventDefault()
@@ -205,3 +199,26 @@ document.getElementById("get-bonus-btn").addEventListener("click", function (e) 
    resetInput("get-bonus-value")
 })
 
+// toggoling section
+document.getElementById("add-money-card").addEventListener("click", function (e) {
+   viweSection('add-money-section')
+});
+document.getElementById("cash-out-card").addEventListener("click", function () {
+   viweSection('cash-out-section')
+
+});
+document.getElementById("transfer-money-card").addEventListener("click", function (e) {
+   viweSection('transfer-money-section')
+})
+document.getElementById("get-bonus-card").addEventListener("click", function (e) {
+   viweSection('get-bonus-section')
+})
+document.getElementById("pay-bill-card").addEventListener("click", function (e) {
+   viweSection('pay-bill-section')
+})
+document.getElementById("pay-bill-card").addEventListener("click", function (e) {
+   viweSection('pay-bill-section')
+})
+document.getElementById("transaction-card").addEventListener("click", function (e) {
+   viweSection('transaction-section')
+})
