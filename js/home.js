@@ -79,7 +79,7 @@ document.getElementById('add-money-btn').addEventListener("click", function (e) 
 
     let transaction = {
         name: "Add Money",
-        time: new Date().toLocaleTimeString()
+        time: new Date().toLocaleTimeString(undefined,{hour12:true})
     };
     transactionInfo.push(transaction);
 })
@@ -120,7 +120,7 @@ document.getElementById('withdraw-money-btn').addEventListener("click", function
 
     let transaction = {
         name: "Cash Out",
-        time: new Date().toLocaleTimeString()
+        time: new Date().toLocaleTimeString(undefined,{hour12:true})
     };
     transactionInfo.push(transaction);
 
@@ -161,7 +161,7 @@ document.getElementById('transfer-money-btn').addEventListener("click", function
 
      let transaction = {
         name: "Transfer Money",
-        time: new Date().toLocaleTimeString()
+        time: new Date().toLocaleTimeString(undefined,{hour12:true})
     };
     transactionInfo.push(transaction);
 
@@ -203,7 +203,7 @@ document.getElementById('pay-bill-btn').addEventListener("click", function (e) {
 
     let transaction = {
         name: "Pay Bill",
-        time: new Date().toLocaleTimeString()
+        time: new Date().toLocaleTimeString(undefined,{hour12:true})
     };
     transactionInfo.push(transaction)
 
@@ -227,7 +227,7 @@ document.getElementById("get-bonus-btn").addEventListener("click", function (e) 
 
     let transaction = {
         name: "Get Bonus",
-        time: new Date().toLocaleTimeString()
+        time: new Date().toLocaleTimeString(undefined,{hour12:true})
     };
     transactionInfo.push(transaction)
 })
