@@ -2,6 +2,9 @@
 function getInputValueAsNumber(id) {
     return parseInt(document.getElementById(id).value);
 }
+function getInputValue(id) {
+    return document.getElementById(id).value;
+}
 function getElementValueAsNumber(id) {
     return parseInt(document.getElementById(id).innerText);
 }
@@ -183,5 +186,22 @@ document.getElementById('pay-bill-btn').addEventListener("click", function (e) {
     resetInput('pay-amount')
     alert(`${payAmount}tk is pay successfuly`);
 
+})
+
+// get bonus section 
+document.getElementById("get-bonus-btn").addEventListener("click", function (e) {
+    e.preventDefault()
+    let coupon = "akib20";
+   let userCoupon = getInputValue("get-bonus-value");
+   if(userCoupon !== coupon){
+    alert('Invalid Coupon');
+    return
+   };
+   let rendomAmount = Math.floor(Math.random()*100);
+   let availableBlance = getElementValueAsNumber("available-blance");
+   totalAmaount =  availableBlance + rendomAmount ;
+   setBalance(totalAmaount);
+   alert(`${rendomAmount}tk bonus added successfuly`)
+   resetInput("get-bonus-value")
 })
 
